@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration Form</title>
+</head>
+<style>
+	div{
+		background: #FBFCFA;
+		width: 50%;
+		margin-left: 25%;
+		padding: 20px;
+		border-radius: 20px;
+
+	}
+	body{
+		background: linear-gradient(red, orange, yellow);
+		padding: 0px;
+	}
+	label{
+		color: black;
+		font-size: 22px;
+	}
+	input{
+		width: 90%;
+		padding: 20px;
+		font-size: 24px;
+		border-radius: 10px;
+	}
+	select{
+		width: 97%;
+		padding: 20px;
+		font-size: 24px;
+		border-radius: 10px;
+	}
+	.button{
+		width: 97%;
+		background: #FF2400;
+		color: #FBFCFA;
+		border-color: #373737;
+		border-radius: 10px;
+		font-size: 30px;
+		transition: all 1s ease;
+	}
+	.button:hover{
+		background: linear-gradient(to right, red, orange, yellow);
+		font-weight: bold;
+		font-size: 40px;
+		color: white;
+		cursor: pointer;
+
+	}
+
+</style>
+<body>
+<div>
+	<label>Please Enter Your Name</label><br>
+	<input id="name" type="text" name="" placeholder="Enter Name"><br><br><br>
+
+	<label>Please Enter Your Email Adress</label><br>
+	<input id="email" type="text" name="" placeholder="Enter Email"><br><br><br>
+
+	<label>Please Enter Your Username</label><br>
+	<input id="user" type="text" name="" placeholder="Enter Username"><br><br><br>
+
+	<label>Please Enter Your Phone Number</label><br>
+	<input id="Pn"type="text" name="" placeholder="Enter Phone Number"><br><br><br>
+
+	<label>Please Enter Your Age</label><br>
+	<input id="dob" type="text" name="" value="1" placeholder="Enter Year You Were Born"><br><br><br>
+
+	<label>Please Enter Your Gender</label><br>
+	<select id="Gn">
+		<option>Select Your Gender</option>
+		<option>Male</option>
+		<option>Female</option>
+		<option>Prefer Not to Say</option>
+
+	</select><br><br><br>
+
+	<label>Please Enter Your Account's Password</label><br>
+	<input id="pass1" type="password" name="" placeholder="Enter Password"><br><br><br>
+
+	<label>Please Confirm Your Account's Password</label><br>
+	<input id="pass2" type="password" name="" placeholder="Enter Password"><br><br><br>
+
+	<input type="button" name="" value="Submit" class="button" onclick="yob()"><br><br><br>
+
+	<input type="button" name="" value="Login" class="button" onclick="Login()">
+</div>
+<script>
+
+function Login() {
+	window.location.href="login.html"
+	}
+	function clickme(){
+		alert("You Have Submited Your Form")
+	}
+	function yob() {
+		let User = document.getElementById('user').value
+		let pn= document.getElementById('Pn').value
+		let gn= document.getElementById('Gn').value
+		let Pass1= document.getElementById('pass1').value
+		let Pass2= document.getElementById('pass2').value
+		let gmail= document.getElementById('email').value
+		let yob= document.getElementById('dob').value
+		let Name= document.getElementById('name').value
+		let age= yob
+		let errorcount = 0
+		if (age >= 14) {
+			alert("You are eligible to create an account, "+Name)
+
+			if (User == "") {
+				//error
+				document.getElementById('user').style.backgroundColor = "red"
+				errorcount = errorcount + 1
+
+			}else{
+				//name is okay
+
+			}
+
+			if (Name == "") {
+				//error
+				document.getElementById('name').style.backgroundColor = "red"
+				errorcount = errorcount + 1
+
+			}else{
+				//name is okay
+
+			}
+			if (gmail == "") {
+				//error
+				document.getElementById('email').style.backgroundColor = "red"
+				errorcount = errorcount + 1
+
+			}else{
+				//email is okay
+
+			}
+			if (yob == "") {
+				//error
+				document.getElementById('dob').style.backgroundColor = "red"
+				errorcount = errorcount + 1
+
+			}else{
+				//yob is okay
+
+			}
+			if (pn == "") {
+				//error
+				document.getElementById('Pn').style.backgroundColor = "red"
+				errorcount = errorcount + 1
+
+			}else{
+				//pn is okay
+
+			}
+			if (errorcount == 0) {
+				//no errors
+				if (Pass1 == Pass2) {
+					//Passwords match
+					alert("Congratulatons, your account is ready")
+					//all data is corect, we are now saving 
+					localStorage.setItem("Name",Name)
+					localStorage.setItem("user",User)
+					localStorage.setItem("age",age)
+					localStorage.setItem("gmail",gmail)
+					localStorage.setItem("pn",pn)
+					localStorage.setItem("gn",gn)
+					localStorage.setItem("pass1",Pass1)
+
+
+
+				}else{
+					//passwords dont match
+					alert("Passwords don't match")
+
+				}
+				}else{
+				//errors
+				alert("There are " +errorcount +" errors")
+
+			}
+
+
+		}else{
+			alert("You are not eligible for an account, "+ Name)
+		}
+	}
+	function selectdata() {
+		let pn= document.getElementById('Pn')
+		let user= document.getElementById('user')
+		let gn= document.getElementById('Gn')
+		let gmail= document.getElementById('email')
+		let yob= document.getElementById('dob')
+		let name= document.getElementById('name')
+		gn.value = localStorage.getItem("gn")
+		pn.value = localStorage.getItem("pn")
+		gmail.value = localStorage.getItem("gmail")
+		yob.value = localStorage.getItem("age")
+		name.value = localStorage.getItem("Name")
+		user.value = localStorage.getItem("user")
+		pass1.value = localStorage.getItem("gn")
+
+	}
+	selectdata()
+</script>
+</body>
+</html>

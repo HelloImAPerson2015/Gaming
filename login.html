@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+</head>
+<style>
+	div{
+		background: #FBFCFA;
+		width: 50%;
+		margin-left: 25%;
+		padding: 20px;
+		border-radius: 20px;
+		height: 75vh;
+		padding-top: 12%;
+
+	}
+	body{
+		background: linear-gradient(red, orange, yellow);
+		padding: 0px;
+	}
+	label{
+		color: black;
+		font-size: 22px;
+	}
+	input{
+		width: 90%;
+		padding: 20px;
+		font-size: 24px;
+		border-radius: 10px;
+	}
+	.button{
+		width: 97%;
+		background: #FF2400;
+		color: #FBFCFA;
+		border-color: #373737;
+		border-radius: 10px;
+		font-size: 30px;
+		transition: all 1s ease;
+	}
+	.button:hover{
+		background: linear-gradient(to right, red, orange, yellow);
+		font-weight: bold;
+		font-size: 35px;
+		color: white;
+		cursor: pointer;
+
+	}
+
+</style>
+<body>
+<div>
+	
+
+	<label>Please Enter Your Username</label><br>
+	<input id="user" type="text" name="" placeholder="Enter Username"><br><br><br>
+
+	<label>Please Enter Your Account's Password</label><br>
+	<input id="pass1" type="password" name="" placeholder="Enter Password"><br><br><br>
+
+
+	<input id="" type="button" value="Login" class="button" name="" onclick="login()"><br><br><br>
+
+
+	<input id="" type="button" value="Dont have an Account, Click Here" class="button" name="" onclick="Register()">
+</div>
+</body>
+<script>
+	function Register() {
+	window.location.href="index.html"
+}
+function login() {
+
+	let useruser = document.getElementById("user").value
+	let userpass = document.getElementById("pass1").value
+
+	let correctuser = localStorage.getItem("user")
+	let correctpass = localStorage.getItem("pass1")
+
+	if (correctpass == userpass && correctuser == useruser) {
+
+		window.location.href="dashboard.html"
+		localStorage.setItem("user",User)
+		localStorage.setItem("pass1",Pass1)
+
+		let Pass1= document.getElementById('pass1')
+		pass1.value = localStorage.getItem("pass1")
+		
+	} else {
+		alert("Wrong Credentials")
+	}
+}
+</script>
+</html>

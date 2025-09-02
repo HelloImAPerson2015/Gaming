@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Dashboard</title>
+</head>
+<style>
+	.div{
+		background: #FBFCFA;
+		padding: 20px;
+		border-radius: 20px;
+
+	}
+body{
+		padding: 0px;
+		height: 97.5vh;
+	}
+	.nav{
+		display: flex;
+		background: #BCC2C2;
+
+	}
+	.logo{
+		width: 40%;
+		margin: 10px;
+	}
+	.divnav{
+		width: 60%;
+		margin: 10px;
+		font-size: 20px;
+		padding: 8px;
+	}
+	.divnav a{
+		margin-right: 12px;
+		text-decoration: none;
+		color: black;
+		transition: all .5s ease;
+	}
+	.divnav a:hover{
+
+		background: #DBE2E9;
+		text-decoration: underline;
+		font-size: 22px;
+		color: dodgerblue;
+
+
+	}
+</style>
+<body>
+	<div class="nav">
+		<div class="logo">
+			<img src="Logo.png" width="200px">
+		</div>
+		<div class="divnav">
+	<a href="">Profile</a>
+	<a href="">Games</a>
+	<a href="">Shop</a>
+		</div>
+	</div>
+	<div class="div">
+		
+	
+<h3>Profile</h3><br><br><br>
+<h3 id="age">Age</h3>
+<h3 id="name">Name</h3>
+<h3 id="email">Email</h3>
+<h3 id="Pn">Phone Number</h3>
+</div>
+<script>
+function selectdata() {
+		let pn= document.getElementById('Pn')
+		let gmail= document.getElementById('email')
+		let yob= document.getElementById('age')
+		let name= document.getElementById('name')
+		pn.innerHTML = localStorage.getItem("pn")
+		gmail.innerHTML = localStorage.getItem("gmail")
+		yob.innerHTML = localStorage.getItem("age")
+		name.innerHTML = localStorage.getItem("Name")
+		
+	}
+	selectdata()
+</script>
+</body>
+</html>

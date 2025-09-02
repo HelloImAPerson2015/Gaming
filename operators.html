@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+</head>
+<style>
+	div{
+		width: 50%;
+		height: 900px;
+		padding: 20px;
+		border-radius: 20px;
+		background: green;
+		margin-left: 50%;
+	}
+	body{
+		background: #333333;
+		padding: 0px;
+	}
+	button{
+		margin-left: 3%;
+		background: #74B72E;
+		width: 45%;
+		color: #333333;
+		border-radius: 100px;
+		border-color: #74B72E;
+		height: 70px;
+		font-size: 40px;
+		font-weight: cursive;
+		cursor: pointer;
+	}
+	input{
+		width: 45%;
+		height: 100px;
+		font-size: 30px;
+		border-color: #74B72E;
+		border-width: 5px;
+		border-radius: 10px;
+		font-weight: cursive;
+		margin-left: 2.5%;
+	}
+	label{
+		margin-left: 3%;
+		font-weight: cursive;
+		font-size: 100px;
+		color: #74B72E;
+	}
+</style>
+<body>
+	<input type="" name="" placeholder="Enter First Number" id="firstnum">
+	<input type="" name="" placeholder="Enter Second Number" id="secnum">
+	<label id="ans">0.0</label><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<button id="btnadd" onclick="add()">Add</button>
+	<button id="btnsub" onclick="sub()">Subtract</button><br><br>
+	<button id="btnmult" onclick="mult()">Multiply</button>
+	<button id="btndiv" onclick="div()">Divide</button><br><br>
+
+
+<script>
+	function add() {
+	// body...
+	var num1= document.getElementById('firstnum').value
+	var num2= document.getElementById('secnum').value
+	var answer=document.getElementById('ans')
+	answer.innerHTML= +num1 + +num2
+	}	
+		function sub() {
+		// body...
+	var num1= document.getElementById('firstnum').value
+	var num2= document.getElementById('secnum').value
+	var answer=document.getElementById('ans')
+	answer.innerHTML= +num1 - +num2
+	}	
+		function mult() {
+		// body...
+	var num1= document.getElementById('firstnum').value
+	var num2= document.getElementById('secnum').value
+	var answer=document.getElementById('ans')
+	answer.innerHTML= +num1 * +num2
+	}	
+		function div() {
+		// body...
+	var num1= document.getElementById('firstnum').value
+	var num2= document.getElementById('secnum').value
+	var answer=document.getElementById('ans')
+	answer.innerHTML= +num1 / +num2
+	}	
+	
+</script>
+</body>
+</html>
